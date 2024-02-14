@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corazonlatiendo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Alinea los elementos al centro */
+            background: #0b1522;
+        }
+
+        .heart {
+            height: 250px; /* Aumenté el tamaño del corazón */
+            width: 250px; /* Aumenté el tamaño del corazón */
+            background-color:red;
+            position: relative;
+            transform: rotate(45deg);
+            box-shadow: -20px  20px 150px #f20044;
+            animation: palpitar 0.5s linear infinite alternate;
+            margin-right: 100px; /* Ajuste del margen derecho */
+        }
+
+        .contenido {
+            position: absolute;
+            top: 33%; /* Ajuste de la posición vertical */
+            left: 33%;
+            transform: translate(-50%, -50%) rotate(-45deg); /* Aplicamos una rotación inversa */
+            z-index: 1;
+            color: white;
+            text-align: center;
+            width: 300%;
+        }
+
+        h1, h2 {
+            font-size: 32px; /* Aumenté el tamaño de fuente */
+            /* Eliminé la transformación de escala */
+            animation: palpitar2 0.5s linear infinite alternate; /* Aplicando la animación a las letras */
+            margin: 0;
+        }
+
+        @keyframes palpitar{
+            0%{
+                transform: rotate(45deg) scale(1.10);
+            }
+            80%{
+                transform: rotate(45deg) scale(1.0);
+            }
+            100%{
+                transform: rotate(45deg) scale(0.8);
+            } 
+        }
+
+        .heart::before{
+            content: "";
+            position: absolute;
+            height: 250px; /* Aumenté el tamaño del corazón */
+            width: 250px; /* Aumenté el tamaño del corazón */
+            background: red;
+            top: -50%;
+            border-radius: 50%;
+            box-shadow: 10px  20px 150px #f20044;
+        }
+
+        .heart::after{
+            content: "";
+            position: absolute;
+            height: 250px; /* Aumenté el tamaño del corazón */
+            width: 250px; /* Aumenté el tamaño del corazón */
+            background: red;
+            right: 50%;
+            border-radius: 50%;
+            box-shadow: 20px  20px 150px #f20044;
+        }
+
+        /* Estilos para el video */
+        .video-container {
+            margin-left: 100px; /* Ajuste del margen izquierdo */
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">
+        <div class="contenido">
+            <h1>Te Amo</h1>
+            <h2>Valentina Vergara</h2>
+        </div>
+    </div>
+
+    <!-- Video -->
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/gyvfENbQVa4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
